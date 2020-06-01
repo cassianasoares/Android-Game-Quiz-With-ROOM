@@ -11,6 +11,6 @@ data class Question (
     @ColumnInfo(name = "question_id")
     var questionId: Int,
     val text: String,
-    val difficulty: String = "0",
+    val difficulty: String = "easy",
     val category: String = "android"
 )

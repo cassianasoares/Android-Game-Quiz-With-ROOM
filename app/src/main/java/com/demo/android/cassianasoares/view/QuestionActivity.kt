@@ -1,5 +1,6 @@
 package com.demo.android.cassianasoares.view
 
+import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
@@ -24,6 +25,8 @@ class QuestionActivity : AppCompatActivity() {
         setContentView(R.layout.activity_questions)
 
         getQuestionsAndAnswers()
+        lv_block.setViewColor(Color.rgb(239, 88, 150));
+        lv_block.setShadowColor(Color.BLACK)
     }
 
     private fun render(state: QuizState){
@@ -36,12 +39,14 @@ class QuestionActivity : AppCompatActivity() {
     }
 
     private fun renderLoadingState() {
-        progressBar.visibility = View.VISIBLE
+        loading_layout.visibility = View.VISIBLE
+        lv_block.startAnim()
     }
 
 
     private fun renderDataState(quizState: QuizState.DataState) {
-        progressBar.visibility = View.GONE
+        lv_block.stopAnim()
+        loading_layout.visibility = View.GONE
         displayQuestionsView()
         questionsRadioGroup.clearCheck()
         questionTextView.text = quizState.data.question?.text
@@ -53,9 +58,7 @@ class QuestionActivity : AppCompatActivity() {
 
 
     private fun renderEmptyState() {
-        progressBar.visibility = View.GONE
-        emptyDroid.visibility = View.VISIBLE
-        emptyTextView.visibility = View.VISIBLE
+        empty_layout.visibility = View.VISIBLE
     }
 
 
@@ -67,17 +70,11 @@ class QuestionActivity : AppCompatActivity() {
 
 
     private fun displayQuestionsView() {
-        questionsRadioGroup.visibility = View.VISIBLE
-        questionTextView.visibility = View.VISIBLE
-        btn_next.visibility = View.VISIBLE
+        question_layout.visibility = View.VISIBLE
     }
 
 
     private fun goToResultActivity(numberOfQuestions: Int, score: Int) {
-        /*val intent = Intent(this, QuestionActivity::class.java)
-        intent.putExtra("SCORE", score)
-        intent.putExtra("NUMBER_OF_QUESTIONS", numberOfQuestions)
-        startActivity(intent).newTask()*/
 
         startActivity(
             intentFor<ResultActivity>(

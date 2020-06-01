@@ -13,8 +13,11 @@ android {
         targetSdkVersion 29
         versionCode 1
         versionName "1.0"
+        vectorDrawables.useSupportLibrary = true
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
+        //Create json with code database structure
         javaCompileOptions {
             annotationProcessorOptions {
                 arguments = [
@@ -68,4 +71,6 @@ dependencies {
 
     // Anko Commons
     implementation "org.jetbrains.anko:anko-commons:$anko_version"
+
+    implementation "com.ldoublem.loadingview:loadingviewlib:1.0"
 }
