@@ -42,22 +42,6 @@ class MainActivity : AppCompatActivity() {
 
     private fun clearQuestions() = viewModel.clearQuestions()
 
-/*
-    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
-        menuInflater.inflate(R.menu.menu_main_activity, menu)
-        return true
-    }
-
-    override fun onOptionsItemSelected(item: MenuItem): Boolean {
-
-        when(item.itemId){
-            R.id.prepopulate -> prepopulateQuestions()
-            R.id.clear -> clearQuestions()
-            else -> Toast.makeText(this, "error", Toast.LENGTH_SHORT).show()
-        }
-        return super.onOptionsItemSelected(item)
-    }*/
-
     fun startPlay(view: View) {
         startActivity(Intent(this, QuestionActivity::class.java))
     }
