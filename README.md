@@ -20,7 +20,7 @@ A simple quiz game using Room persistence library
 ### Note
   If you are interested in knowing your database structure the code below is in the build.glade (Module: app):
   
-  ...
+  ```
   //Create json with code database structure
         javaCompileOptions {
             annotationProcessorOptions {
@@ -29,7 +29,7 @@ A simple quiz game using Room persistence library
                 ]
             }
         }
-  ...
+  ```
   
   It will generate a json file that you can find at: Project -> app -> schemas.
   
