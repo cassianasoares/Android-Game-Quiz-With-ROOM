@@ -1,3 +1,8 @@
+![GitHub repo size](https://img.shields.io/github/repo-size/cassianasoares/Android-Game-Quiz-With-ROOM)
+![GitHub top language](https://img.shields.io/github/languages/top/cassianasoares/Android-Game-Quiz-With-ROOM)
+![GitHub last commit](https://img.shields.io/github/last-commit/cassianasoares/Android-Game-Quiz-With-ROOM)
+
+
 # Android Quiz
 
 A simple quiz game using Room persistence library
